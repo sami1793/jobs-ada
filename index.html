@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <nav class="navbar is-info is-spaced has-shadow is-fixed-top" role="navigation" aria-label="main navigation">
+        <nav class="navbar is-info is-spaced has-shadow" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="https://bulma.io">
                     <span class="icon-text title is-3 has-text-white">
@@ -46,7 +46,106 @@
                 </div>
             </div>
         </nav>
+
     </header>
+
+    <div class="columns is-hidden">
+        <div class="box container is-12-mobile is-7-tablet-only is-7-desktop-only is-7-widescreen">
+                <h2 class="title is-2 mb-6 has-text-weight-bold">Nueva operación</h2>
+                <div class="field">
+                    <label class="label">Job Title</label>
+                    <div class="control">
+                        <input class="input">
+                    </div>
+                    <p class="help is-danger is-hidden" id="description-new-operation-input-help">Este campo no puede estar vacío</p>
+                </div>
+                <div class="field">
+                    <label class="label">Description</label>
+                    <div class="control">
+                        <input class="input">
+                    </div>
+                    <p class="help is-danger is-hidden" id="amount-new-operation-input-help">El monto debe ser mayor a cero</p>
+                </div>
+                <div class="field">
+                    <label class="label">Tags</label>
+                    <div class="control">
+                        <input class="input">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input">
+                    </div>
+                </div>
+                <!-- Botones -->
+                <div class="field is-grouped is-grouped-right mt-6">
+                    <p class="control">
+                        <button class="button is-light" id="cancel-new-operation-button">
+                            Cancelar
+                        </button>
+                    </p>
+                    <p class="control">
+                        <button class="button is-info" id="add-new-operation-button">
+                            Agregar
+                        </button>
+                    </p>
+                </div>
+        </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+        <form class="box column is-narrow-mobile is-7-desktop is-9-tablet-only">
+            <!-- <h2 class="title is-2 mb-6 has-text-weight-bold">Create Job</h2> -->
+            <div class="field">
+              <label class="label">Job Title</label>
+              <div class="control">
+                <input class="input">
+              </div>
+            </div>
+          
+            <div class="field">
+              <label class="label">Description</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="Description..." rows="3"></textarea>
+              </div>
+            </div>
+        
+            <div class="field">
+                <label class="label">Tags</label>
+                <div class="control">
+                    <input class="input">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input class="input">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input class="input">
+                </div>
+            </div>
+          
+            <div class="field is-grouped is-grouped-right mt-6">
+                <p class="control">
+                    <button class="button is-light">
+                        Cancelar
+                    </button>
+                </p>
+                <p class="control">
+                    <button class="button is-info">
+                        Enviar
+                    </button>
+                </p>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
