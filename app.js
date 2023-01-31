@@ -18,4 +18,8 @@ $('#create-job-link').addEventListener('click', goToCreateJob)
 $('#home-link').addEventListener('click', goToHome)
 
 
-
+// Funcionamiento menú burguer
+$("#navbar-burguer").addEventListener("click", () => {
+    $("#navbar-burguer").classList.toggle("is-active");
+    $("#navbar").classList.toggle("is-active");
+  });
