@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar is-info is-spaced has-shadow" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="https://bulma.io">
+                <a class="navbar-item" href="">
                     <span class="icon-text title is-3 has-text-white">
                         <span class="icon">
                             <i class="fa-sharp fa-solid fa-diagram-project"></i>
@@ -36,11 +36,11 @@
 
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item">
+                    <a class="navbar-item" id="home-link">
                         Home
                     </a>
 
-                    <a class="navbar-item">
+                    <a class="navbar-item" id="create-job-link">
                         Create Job
                     </a>
                 </div>
@@ -50,7 +50,7 @@
     </header>
 
     <!-- --FINDER JOBS-- -->
-    <div class="columns is-centered m-6">
+    <div class="columns is-centered m-6" id="finder-jobs-view">
         <div class="field is-horizontal">
             <div class="field-body">
                 <div class="field is-expanded">
@@ -140,7 +140,7 @@
 
 
     <!-- --CREATE JOB-- -->
-    <div class="columns is-centered m-6">
+    <div class="columns is-centered m-6 is-hidden" id="new-job-modal">
         <form class="box column is-narrow-mobile is-7-desktop is-9-tablet-only">
             <!-- <h2 class="title is-2 mb-6 has-text-weight-bold">Create Job</h2> -->
             <div class="field">
@@ -188,6 +188,8 @@
             </div>
         </form>
     </div>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
