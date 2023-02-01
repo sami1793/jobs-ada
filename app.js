@@ -23,3 +23,7 @@ $("#navbar-burguer").addEventListener("click", () => {
     $("#navbar-burguer").classList.toggle("is-active");
     $("#navbar").classList.toggle("is-active");
   });
+
+
+//Funcionamiento de Search
+$('#search-button').addEventListener('click', getJobs)
