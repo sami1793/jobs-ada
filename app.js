@@ -1,6 +1,7 @@
 const $ = (selector) => document.querySelector(selector);
 
 
+
 let goToCreateJob = () => {
     $('#new-job-modal').classList.remove('is-hidden');
     $('#finder-jobs-view').classList.add('is-hidden');
@@ -26,4 +27,10 @@ $("#navbar-burguer").addEventListener("click", () => {
 
 
 //Funcionamiento de Search
-$('#search-button').addEventListener('click', getJobs)
+$('#search-button').addEventListener('click', getJobs);
+
+//Funcionamiento ENVIAR en Create Job
+$('#submit-create-job-button').addEventListener('click', (e) =>{
+    e.preventDefault();
+    createJob();
+})

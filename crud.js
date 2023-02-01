@@ -9,6 +9,7 @@ const getJobs = () =>{
         renderJobs(data);
     })
 }
+getJobs();
 
 //Renderizar los trabajos
 const renderJobs = (jobs) =>{
@@ -40,11 +41,33 @@ const renderJobs = (jobs) =>{
     }
 }
 
+
 const getJobForm = () =>{
     const job = {
         name: $('#job-title-input').value,
         description: $('#job-description-input').value,
-        
+        location: $('#job-location-input').value,
+        category: $('#job-category-input').value,
+        seniority: $('#job-seniority-input').value
     }
     return job;
+}
+
+//Crear un trabajo
+const createJob = ()=>{
+  const job = getJobForm();
+
+  fetch(`${BASE_URL}/jobs`,{
+    method: 'POST',
+    headers: {
+      "Content-Type": "Application/json",
+    },
+    body: JSON.stringify(job),
+  })
+  .then((response) => response.json())
+  .then((data)=>{
+    console.log(data)
+  })
+  .finally(()=> location.href = "index.html")
+  
 }
