@@ -85,12 +85,12 @@ const renderJob = (job) =>{
           <!-- Botones  -->
           <div class="field is-grouped is-grouped-centered mt-6">
               <p class="control">
-                  <button class="button is-success">
+                  <button class="button is-success" data-id="${id}">
                       Edit Job
                   </button>
               </p>
               <p class="control">
-                  <button class="button is-danger" id="submit-create-job-button">
+                  <button class="button is-danger" data-id="${id}">
                       Delete Job
                   </button>
               </p>
