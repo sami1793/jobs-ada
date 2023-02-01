@@ -12,7 +12,8 @@ const getJobs = () =>{
 
 //Renderizar los trabajos
 const renderJobs = (jobs) =>{
-    $('#jobs-container').innerHTML =''
+    $('#jobs-container').innerHTML ='';
+    //Renderizo lista de Jobs
     for (const {name, description, location, category, seniority, id} of jobs) {
         $('#jobs-container').innerHTML += 
         `<div class="card column is-3 m-5">
@@ -37,4 +38,13 @@ const renderJobs = (jobs) =>{
         </div>
     </div>`
     }
+}
+
+const getJobForm = () =>{
+    const job = {
+        name: $('#job-title-input').value,
+        description: $('#job-description-input').value,
+        
+    }
+    return job;
 }
