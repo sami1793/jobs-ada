@@ -1,4 +1,6 @@
 const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
+
 
 
 
@@ -29,8 +31,13 @@ $("#navbar-burguer").addEventListener("click", () => {
 //Funcionamiento de Search
 $('#search-button').addEventListener('click', getJobs);
 
-//Funcionamiento ENVIAR en Create Job
+// Funcionamiento Formulario en Create Job
 $('#submit-create-job-button').addEventListener('click', (e) =>{
     e.preventDefault();
     createJob();
 })
+// $('#form-create-job').addEventListener('submit', (e) =>{
+//     e.preventDefault();
+//     createJob();
+// })
+
