@@ -109,8 +109,19 @@ const renderJob = (job) =>{
 
   //Funcionamiento Editar Job
   $('#edit-job-button').addEventListener('click', () =>{
+    $("#submit-create-job-button").textContent = "Edit";
+    populateForm();
     goToEditJob();
   })
+
+  //Llenar formulario
+  let populateForm = () =>{
+    $("#job-title-input").value = name;
+    $("#job-description-input").value = description;
+    $("#job-location-input").value = location;
+    $("#job-seniority-input").value = seniority;
+    $("#job-category-input").value = category;
+  }
 }
 
 //CREAR un trabajo
@@ -132,11 +143,11 @@ const createJob = () => {
 };
 
 //EDITAR un trabajo
-// const editJob = () =>{
-//   const job = getJobForm();
+const editJob = (id) =>{
+  const job = getJobForm();
 
-//   fetch(`${BASE_URL}/jobs`)
-// }
+  fetch(`${BASE_URL}/jobs/id`)
+}
 
 // ELIMINAR un trabajo
 const deleteJob = (id) => {
