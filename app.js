@@ -2,16 +2,23 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
 
-
+let hideJobs = () =>{
+    $('#jobs-container').classList.add('is-hidden');
+}
+let viewJobs = () =>{
+    $('#jobs-container').classList.remove('is-hidden');
+}
 
 let goToCreateJob = () => {
     $('#new-job-modal').classList.remove('is-hidden');
     $('#finder-jobs-view').classList.add('is-hidden');
+    hideJobs();
 }
 
 let goToHome = () =>{
     $('#new-job-modal').classList.add('is-hidden');
     $('#finder-jobs-view').classList.remove('is-hidden');
+    viewJobs();
 }
 
 //Funcionamiento link Create Job
