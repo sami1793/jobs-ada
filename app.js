@@ -5,8 +5,9 @@ const $$ = (selector) => document.querySelectorAll(selector);
 let hideJobs = () =>{
     $('#jobs-container').classList.add('is-hidden');
 }
-let viewJobs = () =>{
+let showJobs = () =>{
     $('#jobs-container').classList.remove('is-hidden');
+    getJobs();
 }
 
 let goToCreateJob = () => {
@@ -18,7 +19,7 @@ let goToCreateJob = () => {
 let goToHome = () =>{
     $('#new-job-modal').classList.add('is-hidden');
     $('#finder-jobs-view').classList.remove('is-hidden');
-    viewJobs();
+    showJobs();
 }
 
 //Funcionamiento link Create Job

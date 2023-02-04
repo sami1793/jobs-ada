@@ -127,7 +127,8 @@ const createJob = () => {
 const deleteJob = (id) => {
   fetch(`${BASE_URL}/jobs/${id}`, {
     method: "DELETE",
-  });
+  })
+  .finally(() => (location.href = "index.html"));
 };
 
 //OBTENER un trabajo
