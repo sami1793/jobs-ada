@@ -61,6 +61,9 @@ const getJobForm = () => {
 
 //Renderizar UN trabajo
 const renderJob = (job) =>{
+  hideJobs();
+  hideFinder();
+  $('#job-container').classList.remove('is-hidden');
   $('#job-container').innerHTML = '';
 
   const { name, description, location, category, seniority, id } = job;

@@ -10,16 +10,29 @@ let showJobs = () =>{
     getJobs();
 }
 
+let hideJob = () =>{
+    $('#job-container').classList.add('is-hidden');
+}
+let showJob = () =>{
+    $('#job-container').classList.remove('is-hidden');
+}
+
+let hideFinder = () =>{
+    $('#finder-jobs-view').classList.add('is-hidden');
+}
+
 let goToCreateJob = () => {
     $('#new-job-modal').classList.remove('is-hidden');
     $('#finder-jobs-view').classList.add('is-hidden');
     hideJobs();
+    hideJob();
 }
 
 let goToHome = () =>{
     $('#new-job-modal').classList.add('is-hidden');
     $('#finder-jobs-view').classList.remove('is-hidden');
     showJobs();
+    hideJob();
 }
 
 //Funcionamiento link Create Job
