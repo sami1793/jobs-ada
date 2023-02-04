@@ -106,6 +106,11 @@ const renderJob = (job) =>{
   $('#delete-job-button').addEventListener('click', ()=>{
     deleteJob(id);
   })
+
+  //Funcionamiento Editar Job
+  $('#edit-job-button').addEventListener('click', () =>{
+    goToEditJob();
+  })
 }
 
 //CREAR un trabajo
@@ -125,6 +130,13 @@ const createJob = () => {
     })
     .finally(() => (location.href = "index.html"));
 };
+
+//EDITAR un trabajo
+// const editJob = () =>{
+//   const job = getJobForm();
+
+//   fetch(`${BASE_URL}/jobs`)
+// }
 
 // ELIMINAR un trabajo
 const deleteJob = (id) => {

@@ -2,6 +2,7 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
 
+//Ocultar-Mostrar trabajos
 let hideJobs = () =>{
     $('#jobs-container').classList.add('is-hidden');
 }
@@ -10,6 +11,7 @@ let showJobs = () =>{
     getJobs();
 }
 
+//Ocultar-Mostrar UN trabajo
 let hideJob = () =>{
     $('#job-container').classList.add('is-hidden');
 }
@@ -17,8 +19,12 @@ let showJob = () =>{
     $('#job-container').classList.remove('is-hidden');
 }
 
+//Ocultar-Mostrar Finder
 let hideFinder = () =>{
     $('#finder-jobs-view').classList.add('is-hidden');
+}
+let showFinder = () =>{
+    $('#finder-jobs-view').classList.remove('is-hidden');
 }
 
 let goToCreateJob = () => {
@@ -26,6 +32,10 @@ let goToCreateJob = () => {
     $('#finder-jobs-view').classList.add('is-hidden');
     hideJobs();
     hideJob();
+}
+
+let goToEditJob = () =>{
+    $('#new-job-modal').classList.remove('is-hidden');
 }
 
 let goToHome = () =>{
@@ -61,4 +71,6 @@ $('#submit-create-job-button').addEventListener('click', (e) =>{
 //     e.preventDefault();
 //     createJob();
 // })
+
+
 
