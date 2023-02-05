@@ -57,7 +57,10 @@ $("#navbar-burguer").addEventListener("click", () => {
 
 
 //Funcionamiento de Search
-$('#search-button').addEventListener('click', getJobsFiltered);
+$('#search-button').addEventListener('click', (e)=>{
+    e.preventDefault();
+    getJobsFiltered();
+});
 
 //Funcionamiento de Clear
 $('#clear-button').addEventListener('click', getJobs);
