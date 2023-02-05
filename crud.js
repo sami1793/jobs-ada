@@ -11,7 +11,9 @@ const getJobs = () => {
     .then((response) => response.json())
     .then((data) => {
       renderJobs(data);      
+      $("#loading").classList.add("is-hidden")
     });
+    
 };
 getJobs();
 
