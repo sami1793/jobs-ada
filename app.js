@@ -65,7 +65,14 @@ $('#search-button').addEventListener('click', getJobs);
 // Funcionamiento Formulario en Create Job
 $('#submit-create-job-button').addEventListener('click', (e) =>{
     e.preventDefault();
-    createJob();
+    if(isEditing){
+        let id = $("#submit-create-job-button").getAttribute("data-id") 
+        editJob(id)
+    }
+    else{
+        createJob();
+    }
+    
 })
 // $('#form-create-job').addEventListener('submit', (e) =>{
 //     e.preventDefault();

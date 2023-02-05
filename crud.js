@@ -1,5 +1,7 @@
 const BASE_URL = "https://63d43b6fc52305feff602c07.mockapi.io/api";
 
+let isEditing = false;
+
 //Obtener todos los trabajos
 const getJobs = () => {
   fetch(`${BASE_URL}/jobs`)
@@ -43,7 +45,7 @@ const renderJobs = (jobs) => {
     button.addEventListener("click", () => {
       const id = button.getAttribute("data-id");
       console.log(id);
-      getJob(id)
+      getJob(id);
     });
   }
 };
@@ -60,16 +62,17 @@ const getJobForm = () => {
 };
 
 //Renderizar UN trabajo
-const renderJob = (job) =>{
+const renderJob = (job) => {
   hideJobs();
   hideFinder();
-  $('#job-container').classList.remove('is-hidden');
-  $('#job-container').innerHTML = '';
+  $("#job-container").classList.remove("is-hidden");
+  $("#job-container").innerHTML = "";
 
   const { name, description, location, category, seniority, id } = job;
 
-  $('#job-container').innerHTML = 
-  `<div class="card column is-4 m-5 has-text-centered">
+  $(
+    "#job-container"
+  ).innerHTML = `<div class="card column is-4 m-5 has-text-centered">
   <div class="card-content">
       <div class="media">
           <div class="media-content">
@@ -100,29 +103,31 @@ const renderJob = (job) =>{
           </div>
       </div>
   </div>
-</div>`
+</div>`;
 
   //Funcionamiento Delete Job
-  $('#delete-job-button').addEventListener('click', ()=>{
+  $("#delete-job-button").addEventListener("click", () => {
     deleteJob(id);
-  })
+  });
 
   //Funcionamiento Editar Job
-  $('#edit-job-button').addEventListener('click', () =>{
+  $("#edit-job-button").addEventListener("click", () => {
     $("#submit-create-job-button").textContent = "Edit";
     populateForm();
     goToEditJob();
-  })
+    isEditing = true;
+    $("#submit-create-job-button").setAttribute("data-id",id);
+  });
 
   //Llenar formulario
-  let populateForm = () =>{
+  let populateForm = () => {
     $("#job-title-input").value = name;
     $("#job-description-input").value = description;
     $("#job-location-input").value = location;
     $("#job-seniority-input").value = seniority;
     $("#job-category-input").value = category;
-  }
-}
+  };
+};
 
 //CREAR un trabajo
 const createJob = () => {
@@ -143,18 +148,28 @@ const createJob = () => {
 };
 
 //EDITAR un trabajo
-const editJob = (id) =>{
+const editJob = (id) => {
   const job = getJobForm();
 
-  fetch(`${BASE_URL}/jobs/id`)
-}
+  fetch(`${BASE_URL}/jobs/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "Application/json",
+    },
+    body: JSON.stringify(job),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .finally(() => (location.href = "index.html"));
+};
 
 // ELIMINAR un trabajo
 const deleteJob = (id) => {
   fetch(`${BASE_URL}/jobs/${id}`, {
     method: "DELETE",
-  })
-  .finally(() => (location.href = "index.html"));
+  }).finally(() => (location.href = "index.html"));
 };
 
 //OBTENER un trabajo
