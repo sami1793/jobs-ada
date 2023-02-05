@@ -1,5 +1,8 @@
 const BASE_URL = "https://63d43b6fc52305feff602c07.mockapi.io/api";
 
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
+
 let isEditing = false;
 
 //Obtener todos los trabajos
@@ -7,8 +10,7 @@ const getJobs = () => {
   fetch(`${BASE_URL}/jobs`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      renderJobs(data);
+      renderJobs(data);      
     });
 };
 getJobs();

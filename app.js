@@ -1,6 +1,3 @@
-const $ = (selector) => document.querySelector(selector);
-const $$ = (selector) => document.querySelectorAll(selector);
-
 
 //Ocultar-Mostrar trabajos
 let hideJobs = () =>{
@@ -60,7 +57,10 @@ $("#navbar-burguer").addEventListener("click", () => {
 
 
 //Funcionamiento de Search
-$('#search-button').addEventListener('click', getJobs);
+$('#search-button').addEventListener('click', getJobsFiltered);
+
+//Funcionamiento de Clear
+$('#clear-button').addEventListener('click', getJobs);
 
 // Funcionamiento Formulario en Create Job
 $('#submit-create-job-button').addEventListener('click', (e) =>{
