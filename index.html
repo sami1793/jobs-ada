@@ -111,7 +111,7 @@
                 </p>
                 <p class="control">
                     <input class="button is-light" type="reset" value="Reset" id="clear-button">
-                        <!-- Clear -->
+                    <!-- Clear -->
                     </input>
                 </p>
             </div>
@@ -171,7 +171,7 @@
                     </div>
                 </div>
             </div> -->
-        </div>        
+        </div>
     </div>
 
 
@@ -295,28 +295,34 @@
     <!-- MODAL -->
     <div class="modal" id="modal">
         <div class="modal-background"></div>
-        <div class="modal-content has-text-weight-semibold has-text-danger has-background-danger-light p-4" id="modal-content">
-          <p>Are you safe to delete this job?</p>
-          <!-- Botones -->
-          <div class="field is-grouped is-grouped-centered mt-4">
-            <p class="control">
-                <button class="button is-danger" id="btn-modal-delete">
-                    Delete Job
-                </button>
-            </p>
-            <p class="control">
-                <button class="button is-light" id="btn-modal-delete-cancel">
-                    Cancel
-                </button>
-            </p>
+        <div class="modal-card has-text-danger-dark " id="modal-content">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Warning</p>
+                <button class="delete" aria-label="close" id="btn-modal-delete-close"></button>
+            </header>
+            <section class="modal-card-body">
+                <p>Are you safe to delete this job?</p>
+            </section>
+            <!-- Botones -->
+            <footer class="modal-card-foot">
+                <div class="field is-grouped is-grouped-centered mt-4">
+                    <p class="control">
+                        <button class="button is-danger" id="btn-modal-delete">
+                            Delete Job
+                        </button>
+                    </p>
+                    <p class="control">
+                        <button class="button" id="btn-modal-delete-cancel">
+                            Cancel
+                        </button>
+                    </p>
+                </div>
+            </footer>
         </div>
-        </div>
-        <button class="modal-close is-large" aria-label="close" id="btn-modal-delete-close">X</button>
-      </div>
 
-    <script src="crud.js"></script>
-    <script src="filters.js"></script>
-    <script src="app.js"></script>
+        <script src="crud.js"></script>
+        <script src="filters.js"></script>
+        <script src="app.js"></script>
 </body>
 
 </html>
