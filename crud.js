@@ -111,8 +111,13 @@ const renderJob = (job) => {
 
   //Funcionamiento Delete Job
   $("#delete-job-button").addEventListener("click", () => {
-    deleteJob(id);
+    showModal();
+    // deleteJob(id);
   });
+  $('#btn-modal-delete').addEventListener('click', () =>{
+    deleteJob(id)}
+  )
+
 
   //Funcionamiento Editar Job
   $("#edit-job-button").addEventListener("click", () => {

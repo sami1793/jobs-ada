@@ -24,6 +24,16 @@ let showFinder = () =>{
     $('#finder-jobs-view').classList.remove('is-hidden');
 }
 
+//Ocultar-Mostrar Modal Borrado
+let showModal = () =>{
+    $('#modal').classList.add('is-active');
+}
+
+let hideModal = () =>{
+    $('#modal').classList.remove('is-active');
+}
+
+
 let goToCreateJob = () => {
     $('#new-job-modal').classList.remove('is-hidden');
     $('#finder-jobs-view').classList.add('is-hidden');
@@ -77,10 +87,9 @@ $('#submit-create-job-button').addEventListener('click', (e) =>{
     }
     
 })
-// $('#form-create-job').addEventListener('submit', (e) =>{
-//     e.preventDefault();
-//     createJob();
-// })
 
+//Funcionamiento Modal
+$('#btn-modal-delete-close').addEventListener('click', hideModal);
+$('#btn-modal-delete-cancel').addEventListener('click', hideModal);
 
 
