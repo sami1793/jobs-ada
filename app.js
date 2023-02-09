@@ -52,12 +52,16 @@ let goToHome = () =>{
     hideJob();
 }
 
+let addLoadding = () =>{
+    $("#loading").classList.remove("is-hidden");
+    $('#jobs-container').innerHTML = "";
+}
+
 //Funcionamiento link Create Job
 $('#create-job-link').addEventListener('click', goToCreateJob)
 
 //Volver a Home
-$('#home-link').addEventListener('click', goToHome)
-
+$('#home-link').addEventListener('click', goToHome);
 
 // Funcionamiento menú burguer
 $("#navbar-burguer").addEventListener("click", () => {
@@ -69,6 +73,8 @@ $("#navbar-burguer").addEventListener("click", () => {
 //Funcionamiento de Search
 $('#search-button').addEventListener('click', (e)=>{
     e.preventDefault();
+    addLoadding();
+    $('#search-button').disabled = true;
     getJobsFiltered();
 });
 

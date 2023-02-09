@@ -2,10 +2,14 @@ const getJobsFiltered = () => {
     
     fetch(`${BASE_URL}/jobs`)
       .then((response) => response.json())
-      .then((jobs) => {
+      .then((jobs) => { 
         renderJobs(jobsFiltered(jobs));
-      });
-  };
+        $("#loading").classList.add("is-hidden");      
+      })
+      .finally($('#search-button').disabled = false)
+      ;
+      
+};
 
 
 //Filtrar por Location
