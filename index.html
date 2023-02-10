@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Samanta Romero">
+    <meta name="description" content="Publica trabajos, también puedes editarlos y eliminarlos. Encuentralos facilmente filtrando por location, seniority y category">
+    <meta name="keywords" content="trabajos, buscador de trabajos, filtros, categorias, publicar trabajo">
+    <meta name="robots" content="index">
+    <!-- Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <!-- CDN Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -53,6 +58,7 @@
     <form class="columns is-centered m-6" id="finder-jobs-view">
         <div class="field is-horizontal">
             <div class="field-body">
+                <!-- Location -->
                 <div class="field is-expanded">
                     <div class="control">
                         <div class="select is-fullwidth">
@@ -69,6 +75,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Seniority -->
                 <div class="field is-narrow">
                     <div class="control">
                         <div class="select is-fullwidth">
@@ -81,6 +88,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Category -->
                 <div class="field is-narrow">
                     <div class="control">
                         <div class="select is-fullwidth">
@@ -99,7 +107,6 @@
         <!-- Botones -->
         <div class="field is-horizontal">
             <div class="field-label">
-
             </div>
             <div class="field-body">
             </div>
@@ -120,9 +127,11 @@
 
     <!-- --TARJETAS JOBS-- -->
     <div class="container">
+        <!-- Loading -->
         <div class="field is-grouped is-grouped-centered">
             <button class="button is-loading is-large is-info m-5" id="loading"></button>
         </div>
+        <!-- Jobs Container -->
         <div class="columns is-centered is-multiline" id="jobs-container">
             
             <!-- <div class="card column is-3 m-5">
