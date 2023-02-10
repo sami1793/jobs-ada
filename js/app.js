@@ -24,7 +24,7 @@ let showFinder = () =>{
     $('#finder-jobs-view').classList.remove('is-hidden');
 }
 
-//Ocultar-Mostrar Modal Borrado
+//Ocultar-Mostrar Modal de Borrado
 let showModal = () =>{
     $('#modal').classList.add('is-active');
 }
