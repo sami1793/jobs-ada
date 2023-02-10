@@ -17,4 +17,4 @@ La **API** utilizada en este proyecto es creada con [Mockapi](https://mockapi.io
 ## Deploy 🚀
 En el siguiente enlace podes comenzar a Crear, Obtener, Editar y Eliminar empleos 🙌🏼:
 
-👉🏼 [Jobs ADA](https://sami1793.github.io/ahorradas/)
+👉🏼 [Jobs ADA](https://github.com/sami1793/jobs-ada)
